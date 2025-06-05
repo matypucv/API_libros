@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Libritos API</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url(https://wallpapercat.com/w/full/f/9/1/2113259-3840x2160-desktop-4k-minimalist-wallpaper-photo.jpg);
+      background-repeat: round;
+      
+      background-color: #fdeded;
+      font-family: 'Segoe UI', sans-serif;
+      
+    }
+
+    header {
+      background-color: #ff6b6b;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f5e0e0;
+    }
+
+    main {
+      background-color: #e3fdfd;
+      border-radius: 10px;
+      
+      padding: 2rem;
+    }
+
+    #libros .card {
+      background-color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <header style="background-image: url();">
+    Libritos  the API 
+  </header>
+
+  <nav class="my-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+      <div class="input-group" style="max-width: 300px;">
+        <input id="input-busqueda" type="text" class="form-control" placeholder="pues Busca algo" aria-label="Buscar libros">
+        <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+      </div>
+
+      <!-- BOTON TIPO DROPDOWN PARA LOS FILTROS -->
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownFiltros" data-bs-toggle="dropdown" aria-expanded="false">
+          Filtros
+        </button>
+        <!-- BOTONES -->
+        <ul class="dropdown-menu">
+          <!-- BOTONES DE FILTRO -->
+           <!-- BOTON 1 -->
+          <li><a class="dropdown-item" href="#" onclick="mostrarLibros(librosCargados)">Mostrar todos</a></li>
+          <!-- BOTON 2 -->
+          <li><a class="dropdown-item" href="#" onclick="filtrarPorAño(1950)">Antes de 1950</a></li>
+          <!-- BOTON 3 -->
+          <li><a class="dropdown-item" href="#" onclick="filtrarConPortada()">Con portada</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-4">
+    <!-- TITULO DEL CONTENEDOR DE LOS LIBROS -->
+    <h1 class="text-center mb-4">Libritos leyendose desde la bendita API</h1>
+    <!-- ACA MOSTRAMOS LOS LIBROS -->
+    <div id="libros" class="row gy-4"></div>
+  </main>
+  <!-- SCRIPT REFERENCIANDO AL BOOSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- SCRIPT REFERENCIANDO AL JS -->
+  <script src="Assets/js/script.js"></script>
+</body>
+</html>
